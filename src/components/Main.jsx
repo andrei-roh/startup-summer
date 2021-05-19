@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header/Header';
 import Content from './Content/Content';
 
-function App() {
+const Main = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearchValue = (element) => {
+    setSearchValue(element.target.value)
+  }
+  const [userInfo, getUserInfo] = useState({});
+  const handleUserInfo = (element) => {
+    getUserInfo(element.target.value)
+  }
   return (
     <div>
-      <Header />
-      <Content />
+      <Header
+        searchValue={searchValue}
+        handleSearchValue={handleSearchValue}
+        userInfo={userInfo}
+        handleUserInfo={handleUserInfo}
+      />
+    <Content userInfo={userInfo} />
     </ div>
   );
 }
 
-export default App;
+export default Main;
