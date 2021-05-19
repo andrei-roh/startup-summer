@@ -4,23 +4,65 @@ import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const StyledGrid = styled(Grid)`
-  padding-top: 40vh;
+const StartScreenGrid = styled(Grid)`
+  padding-top: 35vh;
   color: #808080;
 `;
 
-function Content() {
+const UserImage = styled.img`
+  height: 280px;
+  border-radius: 50%;
+`;
+
+const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
+  const { name, login, html_url, avatar_url, followers, following, public_repos } = userInfo
   return (
-    <StyledGrid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
-      <Magnifier />
-      <Typography>Start with searching</Typography>
-      <Typography>a GitHub user</Typography>
-    </StyledGrid>
+    showUserScreen
+      ? (
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          alignItems="center"
+        >
+          <Grid
+            container
+            direction="column"
+            justify="space-between"
+            alignItems="center"
+          >
+            <UserImage src={avatar_url} alt={name} />
+            <Typography>{name}</Typography>
+            <Typography>
+              <a href={html_url} target="_blanc">{login}</a>
+            </Typography>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Typography>{followers} followers</Typography>
+              <Typography>{following} following</Typography>
+            </Grid>
+          </Grid>
+          <Grid>
+            <Grid>Repositories ({public_repos})</Grid>
+          </Grid>
+        </Grid>
+      )
+      : (
+        <StartScreenGrid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <Magnifier />
+          <Typography>Start with searching</Typography>
+          <Typography>a GitHub user</Typography>
+        </StartScreenGrid>
+      )
   );
 }
 

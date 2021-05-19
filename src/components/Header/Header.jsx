@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import InputBase from '@material-ui/core/InputBase';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
-import { getUserInfo, getUserRepositoryInfo } from '../../api/user';
 
 const StyledToolbar = styled(Toolbar)`
   background: #0064EB;
@@ -36,11 +35,7 @@ const SearhIconBlock = styled.div`
   color: #808080;
 `;
 
-const Header = ({ searchValue, handleSearchValue }) => {
-  const onKeyPressHandler = (event) => {
-    event.preventDefault()
-    return (getUserInfo(searchValue), getUserRepositoryInfo(searchValue))
-  }
+const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
   return (
     <div>
       <StyledToolbar>
