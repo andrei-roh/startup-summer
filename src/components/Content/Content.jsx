@@ -1,26 +1,20 @@
 import React from 'react';
 import Magnifier from './components/Magnifier';
 import PaginationBlock from './components/Pagination';
-import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import PeopleIcon from '@material-ui/icons/People';
+import PersonIcon from '@material-ui/icons/Person';
 import Typography from '@material-ui/core/Typography';
-
-const StartScreenGrid = styled(Grid)`
-  padding-top: 35vh;
-  color: #808080;
-`;
-
-const UserImage = styled.img`
-  height: 280px;
-  border-radius: 50%;
-`;
-
-const MainGrid = styled(Grid)`
-  display: flex;
-  flex-direction: row;
-  justify-content: spase-between;
-  align-items: center;
-`;
+import {
+  StartScreenGrid,
+  UserImage,
+  MainGrid,
+  LeftGrid,
+  RepositoryLink,
+  SubscriptionsBlock,
+  FollowBlock,
+  FollowTextBlock
+} from './style';
 
 const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
   const { name, login, html_url, avatar_url, followers, following, public_repos } = userInfo;
@@ -35,29 +29,25 @@ const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
     showUserScreen
       ? (
         <MainGrid>
-          <Grid
-            container
-            direction="column"
-            justify="space-between"
-            alignItems="center"
-          >
+          <LeftGrid>
             <UserImage src={avatar_url} alt={name} />
-            <Typography>{name}</Typography>
+            <Typography variant="h6" style={{ fontWeight: "bold" }}>{name}</Typography>
             <Typography>
-              <a href={html_url} target="_blanc">{login}</a>
+              <RepositoryLink href={html_url} target="_blanc">{login}</RepositoryLink>
             </Typography>
-            <Grid
-              container
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <Typography>{followers} followers</Typography>
-              <Typography>{following} following</Typography>
-            </Grid>
-          </Grid>
+            <SubscriptionsBlock>
+              <FollowBlock>
+                <PeopleIcon style={{ color: '#808080'}} />
+                <FollowTextBlock>{followers} followers</FollowTextBlock>
+              </FollowBlock>
+              <FollowBlock>
+                <PersonIcon style={{ color: '#808080'}} />
+                <FollowTextBlock>{following} following</FollowTextBlock>
+              </FollowBlock>
+            </SubscriptionsBlock>
+          </LeftGrid>
           <Grid>
-            <Grid>Repositories ({public_repos})</Grid>
+            <Typography variant="h5" style={{ fontWeight: "bold" }}>Repositories ({public_repos})</Typography>
             {
               objectIsEmpty(userRepositoryInfo)
               ? (null)

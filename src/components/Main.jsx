@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header/Header';
 import Content from './Content/Content';
-// import getUser from '../api/getUser';
 
 const Main = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -26,7 +25,7 @@ const Main = () => {
     		getUserInfo(respData);
     	}
     )
-    await fetch(`${URL}/${searchValue}/repos`)
+    await fetch(`${URL}/${searchValue}/repos?per_page=100`)
     .then(
       function(response) {
         return response.json();
@@ -39,10 +38,7 @@ const Main = () => {
     )
 }
 
-useEffect(() => {
-  console.log(userInfo, userRepositoryInfo)
-}, [userInfo, userRepositoryInfo]);
-
+useEffect(() => {}, [userInfo, userRepositoryInfo]);
 
   return (
     <div>
@@ -56,7 +52,7 @@ useEffect(() => {
         userRepositoryInfo={userRepositoryInfo}
         showUserScreen={showUserScreen}
       />
-    </ div>
+    </div>
   );
 }
 
