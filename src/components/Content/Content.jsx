@@ -1,5 +1,6 @@
 import React from 'react';
 import Magnifier from './components/Magnifier';
+import PaginationBlock from './components/Pagination';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -14,17 +15,26 @@ const UserImage = styled.img`
   border-radius: 50%;
 `;
 
+const MainGrid = styled(Grid)`
+  display: flex;
+  flex-direction: row;
+  justify-content: spase-between;
+  align-items: center;
+`;
+
 const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
-  const { name, login, html_url, avatar_url, followers, following, public_repos } = userInfo
+  const { name, login, html_url, avatar_url, followers, following, public_repos } = userInfo;
+
+  const objectIsEmpty = (object) => {
+  for (let element in object) {
+    return false;
+  }
+  return true;
+}
   return (
     showUserScreen
       ? (
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
+        <MainGrid>
           <Grid
             container
             direction="column"
@@ -48,8 +58,13 @@ const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
           </Grid>
           <Grid>
             <Grid>Repositories ({public_repos})</Grid>
+            {
+              objectIsEmpty(userRepositoryInfo)
+              ? (null)
+              : <PaginationBlock userRepositoryInfo={userRepositoryInfo} public_repos={public_repos} />
+            }
           </Grid>
-        </Grid>
+        </MainGrid>
       )
       : (
         <StartScreenGrid

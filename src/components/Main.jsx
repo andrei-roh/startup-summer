@@ -13,7 +13,7 @@ const Main = () => {
   let [showUserScreen, setShowUserScreen] = useState(false);
   const onKeyPressHandler = async (event) => {
     event.preventDefault();
-    setShowUserScreen(!showUserScreen);
+    setShowUserScreen(showUserScreen = true);
     const URL = "https://api.github.com/users";
     await fetch(`${URL}/${searchValue}`)
     .then(
@@ -42,6 +42,7 @@ const Main = () => {
 useEffect(() => {
   console.log(userInfo, userRepositoryInfo)
 }, [userInfo, userRepositoryInfo]);
+
 
   return (
     <div>
