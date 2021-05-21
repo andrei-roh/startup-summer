@@ -40,6 +40,7 @@ export const LeftGrid = styled(Grid)`
   @media (max-width: 800px) {
     margin-left: 0px;
     padding-right: 0px;
+    padding-bottom: 25px;
   }
 `;
 

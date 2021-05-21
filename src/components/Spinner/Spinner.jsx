@@ -30,8 +30,8 @@ const Spinner = () => {
         <Loader
           type="Watch"
           color="#0064EB"
-          height={275}
-          width={275}
+          height={250}
+          width={250}
         />
     </SpinnerSmallBlock>
     </SpinnerBigBlock>

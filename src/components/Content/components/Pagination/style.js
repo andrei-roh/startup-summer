@@ -32,7 +32,7 @@ export const RightBlock = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 98vw;
+    width: 100%;
     height: 100%;
     align-self: flex-start;
   }
@@ -47,7 +47,7 @@ export const BottomBlock = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 98vw;
+    width: 95vw;
     align-self: flex-start;
   }
 `;
