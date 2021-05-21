@@ -13,14 +13,15 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
   const handleChange = (event, value) => {
     setPage(value);
   };
+
   let stepsArray = [0];
-  let step = 4
+  let step = 4;
   for (let i = 0; i < (public_repos / 4); i += 1) {
   	stepsArray.push(step);
-    step += 4
-  }
+    step += 4;
+  };
   let paginateUserRepositoryInfo = (pageNumber) => {
-    return userRepositoryInfo.slice(stepsArray[pageNumber - 1], stepsArray[pageNumber])
+    return userRepositoryInfo.slice(0, public_repos).slice(stepsArray[pageNumber - 1], stepsArray[pageNumber])
   };
   let getNecessaryRepositoryInfo = paginateUserRepositoryInfo(page).map(element =>
     <StyledCard>
@@ -30,14 +31,27 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
       <Typography variant="body2">{element.description}</Typography>
     </StyledCard>
   );
-  let getPaginationCount = Math.floor(public_repos / 4);
+
+  let getPaginationCount = Math.ceil(public_repos / 4);
+  const firstNumberItems = () => {
+    if (stepsArray[page - 1] === 0) {
+      return 1
+    }
+    return stepsArray[page - 1]
+  }
+  const lastNumberItems = () => {
+    if (page === getPaginationCount) {
+      return public_repos
+    }
+    return stepsArray[page]
+  }
 
   return (
     <RightBlock>
       <div>{getNecessaryRepositoryInfo}</div>
       <BottomBlock>
         <Typography variant="body2" style={{ color: "#808080" }}>
-          {stepsArray[page - 1] === 0 ? 1 : stepsArray[page - 1]}-{stepsArray[page]} of {public_repos} items
+          {firstNumberItems()}-{lastNumberItems()} of {public_repos} items
         </Typography>
         <Pagination
           count={getPaginationCount}

@@ -16,18 +16,19 @@ export const UserImage = styled.img`
 export const MainGrid = styled(Grid)`
   display: flex;
   flex-direction: row;
-  justify-content: spase-between;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   background: #E5E5E5;
   height: 85vh;
-  padding-top: 20px;
+  padding-top: 5vh;
   box-sizing: border-box;
+  width: 100%;
 `;
 
 export const LeftGrid = styled(Grid)`
-  align-self: flex-start;
   margin-left: 50px;
   padding-right: 80px;
+  height: 50vh;
 `;
 
 export const RepositoryLink = styled.a`
@@ -47,6 +48,6 @@ export const FollowBlock = styled(Typography)`
   flex-direction: row;
 `;
 
-export const FollowTextBlock = styled.div`
+export const FollowTextBlock = styled.span`
   padding: 2px 2px 2px 10px;
 `;

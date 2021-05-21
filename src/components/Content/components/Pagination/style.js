@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 
 export const StyledCard = styled(Card)`
-  height: 80px;
-  width: 800px;
+  /* height: 100%; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 32px 24px 32px 24px;
+  padding: 16px 24px 16px 24px;
   box-sizing: border-box;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -23,6 +23,10 @@ export const PaginationLink = styled.a`
 export const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
+  height: 70vh;
+  justify-content: space-between;
+  width: 50vw;
+  align-self: flex-end;
 `;
 
 export const BottomBlock = styled.div`
