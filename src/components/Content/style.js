@@ -23,12 +23,24 @@ export const MainGrid = styled(Grid)`
   padding-top: 5vh;
   box-sizing: border-box;
   width: 100%;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+  }
 `;
 
 export const LeftGrid = styled(Grid)`
   margin-left: 50px;
   padding-right: 80px;
   height: 50vh;
+
+  @media (max-width: 800px) {
+    margin-left: 0px;
+    padding-right: 0px;
+  }
 `;
 
 export const RepositoryLink = styled.a`

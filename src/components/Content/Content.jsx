@@ -1,12 +1,12 @@
 import React from 'react';
-import Magnifier from './components/Magnifier/Magnifier';
+import StartScreen from './components/StartScreen/StartScreen';
 import PaginationBlock from './components/Pagination/Pagination';
+import EmptyRepository from './components/EmptyRepository/EmptyRepository';
 import Grid from '@material-ui/core/Grid';
 import PeopleIcon from '@material-ui/icons/People';
 import PersonIcon from '@material-ui/icons/Person';
 import Typography from '@material-ui/core/Typography';
 import {
-  StartScreenGrid,
   UserImage,
   MainGrid,
   LeftGrid,
@@ -47,27 +47,15 @@ const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
             </SubscriptionsBlock>
           </LeftGrid>
           <Grid>
-            <Typography variant="h5" style={{ fontWeight: "bold" }}>Repositories ({public_repos})</Typography>
             {
               objectIsEmpty(userRepositoryInfo)
-              ? (null)
+              ? <EmptyRepository />
               : <PaginationBlock userRepositoryInfo={userRepositoryInfo} public_repos={public_repos} />
             }
           </Grid>
         </MainGrid>
       )
-      : (
-        <StartScreenGrid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-        >
-          <Magnifier />
-          <Typography>Start with searching</Typography>
-          <Typography>a GitHub user</Typography>
-        </StartScreenGrid>
-      )
+      : <StartScreen />
   );
 }
 

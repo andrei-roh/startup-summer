@@ -5,6 +5,10 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 export const StyledToolbar = styled(Toolbar)`
   background: #0064EB;
   height: 15vh;
+
+  @media (max-width: 800px) {
+    height: 30px;
+  }
 `;
 
 export const StyledGitHubIcon = styled(GitHubIcon)`

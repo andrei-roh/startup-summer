@@ -48,6 +48,7 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
 
   return (
     <RightBlock>
+      <Typography variant="h5" style={{ fontWeight: "bold" }}>Repositories ({public_repos})</Typography>
       <div>{getNecessaryRepositoryInfo}</div>
       <BottomBlock>
         <Typography variant="body2" style={{ color: "#808080" }}>

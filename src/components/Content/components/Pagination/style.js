@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 
 export const StyledCard = styled(Card)`
-  /* height: 100%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -27,6 +26,16 @@ export const RightBlock = styled.div`
   justify-content: space-between;
   width: 50vw;
   align-self: flex-end;
+
+  @media (max-width: 800px) {
+    padding-top: 160px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98vw;
+    height: 100%;
+    align-self: flex-start;
+  }
 `;
 
 export const BottomBlock = styled.div`
@@ -34,4 +43,11 @@ export const BottomBlock = styled.div`
   align-self: flex-end;
   flex-direction: row;
   align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 98vw;
+    align-self: flex-start;
+  }
 `;
