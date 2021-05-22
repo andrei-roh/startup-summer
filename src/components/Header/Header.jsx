@@ -5,30 +5,32 @@ import {
   StyledToolbar,
   StyledGitHubIcon,
   Search,
-  SearhIconBlock
+  SearhIconBlock,
 } from './style';
 
 const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
   return (
     <div>
       <StyledToolbar>
-        <a href="https://github.com/" target="_blanc"><StyledGitHubIcon fontSize="large" /></a>
-          <Search onSubmit={onKeyPressHandler}>
-            <SearhIconBlock>
-              <SearchIcon />
-            </SearhIconBlock>
-            <InputBase
-              placeholder="Enter GitHub username"
-              autoFocus={true}
-              type="text"
-              value={searchValue}
-              onChange={handleSearchValue}
-              style={{ background: "#FFF" }}
-            />
+        <a href="https://github.com/" target="_blanc">
+          <StyledGitHubIcon fontSize="large" />
+        </a>
+        <Search onSubmit={onKeyPressHandler}>
+          <SearhIconBlock>
+            <SearchIcon />
+          </SearhIconBlock>
+          <InputBase
+            placeholder="Enter GitHub username"
+            autoFocus={true}
+            type="text"
+            value={searchValue}
+            onChange={handleSearchValue}
+            style={{ background: '#FFF' }}
+          />
         </Search>
       </StyledToolbar>
     </div>
   );
-}
+};
 
 export default Header;

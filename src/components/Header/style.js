@@ -3,7 +3,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 export const StyledToolbar = styled(Toolbar)`
-  background: #0064EB;
+  background: #0064eb;
   height: 15vh;
 
   @media (max-width: 800px) {
@@ -14,13 +14,13 @@ export const StyledToolbar = styled(Toolbar)`
 export const StyledGitHubIcon = styled(GitHubIcon)`
   margin-left: 20px;
   font-size: 40px;
-  color: #FFF;
-  background: #0064EB;
+  color: #fff;
+  background: #0064eb;
 `;
 
 export const Search = styled.form`
   display: flex;
-  background: #FFF;
+  background: #fff;
   border-radius: 5px;
   width: 500px;
   height: 40px;
@@ -36,5 +36,5 @@ export const SearhIconBlock = styled.div`
   align-items: center;
   justify-content: center;
   color: #808080;
-  background: #FFF;
+  background: #fff;
 `;

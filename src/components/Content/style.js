@@ -18,7 +18,7 @@ export const MainGrid = styled(Grid)`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
-  background: #E5E5E5;
+  background: #e5e5e5;
   height: 85vh;
   padding-top: 5vh;
   box-sizing: border-box;
@@ -28,7 +28,7 @@ export const MainGrid = styled(Grid)`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: #FFF;
+    background: #fff;
   }
 `;
 
@@ -46,7 +46,7 @@ export const LeftGrid = styled(Grid)`
 
 export const RepositoryLink = styled.a`
   text-decoration: none;
-  color: #0064EB;
+  color: #0064eb;
 `;
 
 export const SubscriptionsBlock = styled(Grid)`

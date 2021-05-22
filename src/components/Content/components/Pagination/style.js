@@ -10,13 +10,13 @@ export const StyledCard = styled(Card)`
   box-sizing: border-box;
   margin-top: 12px;
   margin-bottom: 12px;
-  background: #FFF;
+  background: #fff;
 `;
 
 export const PaginationLink = styled.a`
   text-decoration: none;
-  color: #0064EB;
-  background: #FFF;
+  color: #0064eb;
+  background: #fff;
 `;
 
 export const RightBlock = styled.div`
