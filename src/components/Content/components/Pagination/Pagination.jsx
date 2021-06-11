@@ -22,7 +22,7 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
   };
   let getNecessaryRepositoryInfo = paginateUserRepositoryInfo(page).map(
     (element) => (
-      <StyledCard>
+      <StyledCard key={element.name}>
         <Typography variant="body1">
           <PaginationLink href={element.html_url} target="_blanc">
             {element.name}
