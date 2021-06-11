@@ -49,7 +49,7 @@ const Main = () => {
   useEffect(() => {}, [userInfo, userRepositoryInfo]);
 
   return (
-    <div>
+    <React.Fragment>
       <Header
         searchValue={searchValue}
         handleSearchValue={handleSearchValue}
@@ -66,7 +66,7 @@ const Main = () => {
           showUserScreen={showUserScreen}
         />
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

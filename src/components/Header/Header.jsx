@@ -10,7 +10,7 @@ import {
 
 const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
   return (
-    <div>
+    <React.Fragment>
       <StyledToolbar>
         <a href="https://github.com/" target="_blanc">
           <StyledGitHubIcon fontSize="large" />
@@ -29,7 +29,7 @@ const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
           />
         </Search>
       </StyledToolbar>
-    </div>
+    </React.Fragment>
   );
 };
 
