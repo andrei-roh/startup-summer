@@ -4,7 +4,7 @@ import Main from './Main';
 
 describe('<Main />', () => {
   const main = shallow(<Main />);
-  it('renders properly', () => {
+  it('should match the snapshot', () => {
     expect(main).toMatchSnapshot();
   });
 });
