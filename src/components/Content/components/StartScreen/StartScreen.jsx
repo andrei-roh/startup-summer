@@ -4,8 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const StartScreenGrid = styled(Grid)`
-  padding-top: 35vh;
   color: #808080;
+  background: #e5e5e5;
+  height: 100vh;
+  box-sizing: border-box;
 `;
 
 const EmptyRepository = () => {

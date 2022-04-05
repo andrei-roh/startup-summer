@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getUserInformation } from './utils/getUserInformation';
 import Header from './Header/Header';
 import Content from './Content/Content';
 import Spinner from './Spinner/Spinner';
@@ -17,39 +18,27 @@ const Main = () => {
 
   const onKeyPressHandler = async (event) => {
     setShowSpinner(!showSpinner);
-    setShowEmptyUser((showEmptyUser = false));
+    setShowEmptyUser(false);
     getUserRepositoryInfo([]);
     let repositoryPages = 0;
     event.preventDefault();
-    const URL = 'https://api.github.com/users';
-    await fetch(`${URL}/${searchValue}`)
-      .then(function (response) {
-        if (response.status === 404) {
-          setShowEmptyUser((showEmptyUser = true));
-        }
-        return response.json();
-      })
-      .then(function (respData) {
-        getUserInfo(respData);
-        repositoryPages = Math.ceil(respData.public_repos / 100);
-      });
-    for (let i = 0; i < repositoryPages; i += 1) {
-      await fetch(`${URL}/${searchValue}/repos?per_page=100&page=${i}`)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (respData) {
-          getUserRepositoryInfo((prevState) => [...prevState, ...respData]);
-        });
-    }
-    setShowUserScreen((showUserScreen = true));
-    setShowSpinner((showSpinner = false));
+
+    await getUserInformation(
+      setShowEmptyUser,
+      searchValue,
+      getUserInfo,
+      repositoryPages,
+      getUserRepositoryInfo
+    );
+
+    setShowUserScreen(true);
+    setShowSpinner(false);
   };
 
   useEffect(() => {}, [userInfo, userRepositoryInfo]);
 
   return (
-    <React.Fragment>
+    <>
       <Header
         searchValue={searchValue}
         handleSearchValue={handleSearchValue}
@@ -66,7 +55,7 @@ const Main = () => {
           showUserScreen={showUserScreen}
         />
       )}
-    </React.Fragment>
+    </>
   );
 };
 

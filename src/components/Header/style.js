@@ -5,17 +5,33 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 export const StyledToolbar = styled(Toolbar)`
   background: #0064eb;
   height: 15vh;
+  position: fixed;
+  width: 100%;
 
-  @media (max-width: 800px) {
+  @media (max-width: 799px) {
     height: 30px;
+  }
+
+  @media (max-width: 374px) {
+    a {
+      display: none;
+    }
   }
 `;
 
 export const StyledGitHubIcon = styled(GitHubIcon)`
-  margin-left: 20px;
+  margin-left: 24px;
   font-size: 40px;
   color: #fff;
   background: #0064eb;
+
+  @media (max-width: 799px) {
+    margin-left: 16px;
+  }
+
+  @media (max-width: 424) {
+    margin-left: 8px;
+  }
 `;
 
 export const Search = styled.form`
@@ -25,6 +41,15 @@ export const Search = styled.form`
   width: 500px;
   height: 40px;
   margin-left: 20px;
+
+  @media (max-width: 767px) {
+    width: 300px;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 374px) {
+    width: 280px;
+  }
 `;
 
 export const SearhIconBlock = styled.div`

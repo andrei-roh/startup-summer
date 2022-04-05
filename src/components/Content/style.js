@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 export const StartScreenGrid = styled(Grid)`
   padding-top: 35vh;
   color: #808080;
+  background: #e5e5e5;
 `;
 
 export const UserImage = styled.img`
@@ -24,11 +25,10 @@ export const MainGrid = styled(Grid)`
   box-sizing: border-box;
   width: 100%;
 
-  @media (max-width: 800px) {
+  @media (max-width: 799px) {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
   }
 `;
 
@@ -37,7 +37,7 @@ export const LeftGrid = styled(Grid)`
   padding-right: 80px;
   height: 50vh;
 
-  @media (max-width: 800px) {
+  @media (max-width: 799px) {
     margin-left: 0px;
     padding-right: 0px;
     padding-bottom: 25px;

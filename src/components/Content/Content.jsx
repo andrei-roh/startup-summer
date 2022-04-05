@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import PeopleIcon from '@material-ui/icons/People';
 import PersonIcon from '@material-ui/icons/Person';
 import Typography from '@material-ui/core/Typography';
+import { objectIsEmpty } from '../utils/objectIsEmpty';
 import {
   UserImage,
   MainGrid,
@@ -27,12 +28,6 @@ const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
     public_repos,
   } = userInfo;
 
-  const objectIsEmpty = (object) => {
-    for (let element in object) {
-      return false;
-    }
-    return true;
-  };
   return showUserScreen ? (
     <MainGrid>
       <LeftGrid>
@@ -56,7 +51,7 @@ const Content = ({ userInfo, showUserScreen, userRepositoryInfo }) => {
           </FollowBlock>
         </SubscriptionsBlock>
       </LeftGrid>
-      <Grid>
+      <Grid style={{ width: '100%' }}>
         {objectIsEmpty(userRepositoryInfo) ? (
           <EmptyRepository />
         ) : (

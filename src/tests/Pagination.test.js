@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Pagination from './Pagination';
+import Pagination from '../components/Content/components/Pagination/Pagination';
 
 const userInfo = [
   {
@@ -143,9 +143,6 @@ describe('<Pagination />', () => {
     userRepositoryInfo: userInfo,
   };
   const pagination = shallow(<Pagination {...initialProps} />);
-  it('should match the snapshot', () => {
-    expect(pagination.html()).toMatchSnapshot();
-  });
 
   it('should have an div block with repositories', () => {
     expect(pagination.find('div').length).toEqual(1);

@@ -10,8 +10,8 @@ import {
 
 const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
   return (
-    <React.Fragment>
-      <StyledToolbar>
+    <>
+      <StyledToolbar disableGutters={true}>
         <a href="https://github.com/" target="_blanc">
           <StyledGitHubIcon fontSize="large" />
         </a>
@@ -29,7 +29,7 @@ const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
           />
         </Search>
       </StyledToolbar>
-    </React.Fragment>
+    </>
   );
 };
 

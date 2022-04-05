@@ -11,6 +11,12 @@ export const StyledCard = styled(Card)`
   margin-top: 12px;
   margin-bottom: 12px;
   background: #fff;
+
+  @media (max-width: 799px) {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export const PaginationLink = styled.a`
@@ -26,9 +32,9 @@ export const RightBlock = styled.div`
   justify-content: space-between;
   width: 50vw;
   align-self: flex-end;
+  background: #e5e5e5;
 
-  @media (max-width: 800px) {
-    padding-top: 160px;
+  @media (max-width: 799px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -43,11 +49,13 @@ export const BottomBlock = styled.div`
   align-self: flex-end;
   flex-direction: row;
   align-items: center;
-  @media (max-width: 800px) {
+
+  @media (max-width: 799px) {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 95vw;
     align-self: flex-start;
+    margin-bottom: 15px;
   }
 `;

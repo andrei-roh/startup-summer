@@ -15,12 +15,13 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
     stepsArray.push(step);
     step += 4;
   }
-  let paginateUserRepositoryInfo = (pageNumber) => {
+  const paginateUserRepositoryInfo = (pageNumber) => {
     return userRepositoryInfo
       .slice(0, public_repos)
       .slice(stepsArray[pageNumber - 1], stepsArray[pageNumber]);
   };
-  let getNecessaryRepositoryInfo = paginateUserRepositoryInfo(page).map(
+
+  const getNecessaryRepositoryInfo = paginateUserRepositoryInfo(page).map(
     (element) => (
       <StyledCard key={element.name}>
         <Typography variant="body1">
@@ -52,7 +53,7 @@ const PaginationBlock = ({ userRepositoryInfo, public_repos }) => {
       <Typography variant="h5" style={{ fontWeight: 'bold' }}>
         Repositories ({public_repos})
       </Typography>
-      <div>{getNecessaryRepositoryInfo}</div>
+      <div style={{ width: '100%' }}>{getNecessaryRepositoryInfo}</div>
       <BottomBlock>
         <Typography variant="body2" style={{ color: '#808080' }}>
           {firstNumberItems()}-{lastNumberItems()} of {public_repos} items
