@@ -5,8 +5,8 @@ import InputBase from '@material-ui/core/InputBase';
 
 export const StyledToolbar = styled(Toolbar)`
   background: #0064eb;
-  height: 15vh;
   position: fixed;
+  height: 96px;
   width: 100%;
 
   @media (max-width: 799px) {
