@@ -1,7 +1,7 @@
 import React from 'react';
-import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import {
+  Input,
   StyledToolbar,
   StyledGitHubIcon,
   Search,
@@ -19,7 +19,7 @@ const Header = ({ searchValue, handleSearchValue, onKeyPressHandler }) => {
           <SearhIconBlock>
             <SearchIcon />
           </SearhIconBlock>
-          <InputBase
+          <Input
             placeholder="Enter GitHub username"
             autoFocus={true}
             type="text"

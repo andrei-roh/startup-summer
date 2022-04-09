@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Toolbar from '@material-ui/core/Toolbar';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import InputBase from '@material-ui/core/InputBase';
 
 export const StyledToolbar = styled(Toolbar)`
   background: #0064eb;
@@ -62,4 +63,8 @@ export const SearhIconBlock = styled.div`
   justify-content: center;
   color: #808080;
   background: #fff;
+`;
+
+export const Input = styled(InputBase)`
+  width: 80%;
 `;
