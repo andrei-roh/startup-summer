@@ -8,10 +8,14 @@ const SpinnerBigBlock = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   background: #e5e5e5;
-  height: 85vh;
+  height: calc(100vh - 96px);
   padding-top: 5vh;
   box-sizing: border-box;
   width: 100%;
+
+  @media (max-width: 799px) {
+    height: calc(100vh - 56px);
+  }
 `;
 
 const SpinnerSmallBlock = styled.div`
